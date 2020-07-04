@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus@">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Database example - shopping list</title>
+
+    <style type="text/css">
+        body{ text-align: center; }
+    </style>
+</head>
+<body>
+    <h3>shopping list</h3>
+    <h4>show list</h4>
+    <table border=1 width="600" align="center">
+        <thead>
+        <td>name</td>
+        <td>number</td>
+        <td>price</td>
+        </thead>
+    <h5>buy</h5>
+    <form method="POST", action = "{{ url_for ('buy') }}">
+        <button type="submit">buy</button>
+    </form>
+     {% for row in rows %}
+        <tr>
+            <td>{{ row["item"] }}</td>
+            <td>{{ row["num"] }}</td>
+            <td>{{ row["price"] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+</body>
+</html>
